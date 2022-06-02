@@ -1,6 +1,7 @@
 # Assignment 3: ROS Mobile Robots Simulator
 
 Developer: Thomas Campagnolo (5343274)
+
 Robotics Engineering, University of Genova.
 
 This is the third and final assignment of the Research Track I course. The simulation involves a mobile robot positioned inside an environment, and it's equipped with a laser scanner in order to detect the presence of obstacles, such as the walls of the environment. 
@@ -58,11 +59,10 @@ $ roslaunch final_assignment move_base.launch
 ```
 $ roslaunch final_assignment launcher.launch
 ```
-At startup, simulation in the Gazebo environment looks like this:
-![ui](readme_images/gazebo_sim.jpeg)
+At startup, simulation in the Gazebo and Rviz environment looks like this:
+![gazebo_sim](readme_images/gazebo_sim.jpeg)
+![rviz_sim](readme_images/rviz_sim.jpeg)
 
-and in Rviz:
-![ui](readme_images/rviz_sim.jpeg)
 
 ## Structure Description
 
