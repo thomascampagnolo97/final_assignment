@@ -59,7 +59,7 @@ $ roslaunch final_assignment move_base.launch
 ```
 $ roslaunch final_assignment launcher.launch
 ```
-At startup, simulation in the Gazebo and Rviz environment looks like this:
+The simulation in the Gazebo and Rviz environment looks like this:
 ![gazebo_sim](readme_images/gazebo_sim.jpeg)
 ![rviz_sim](readme_images/rviz_sim.jpeg)
 
