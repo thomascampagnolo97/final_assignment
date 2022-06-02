@@ -58,6 +58,11 @@ $ roslaunch final_assignment move_base.launch
 ```
 $ roslaunch final_assignment launcher.launch
 ```
+At startup, simulation in the Gazebo environment looks like this:
+![ui](readme_images/gazebo_sim.jpeg)
+
+and in Rviz:
+![ui](readme_images/rviz_sim.jpeg)
 
 ## Structure Description
 
@@ -86,7 +91,7 @@ while rospy not on shutdown
  else:
  user input not valid
 ```
-![ui](readme_images/ui_sim.jpg)
+![ui](readme_images/ui_sim.jpeg)
 
 ### Autonomous Drive
 
