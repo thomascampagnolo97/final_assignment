@@ -18,24 +18,24 @@ The simulator requires the version of [ROS Noetic](http://wiki.ros.org/noetic/In
 
 * teleop twist keyboard package:
 ```
-$ sudo apt-get install ros-noetic-teleop-twist-keyboard
+sudo apt-get install ros-noetic-teleop-twist-keyboard
 ```
 * ros navigation stack:
 ```
-$ sudo apt-get install ros-noetic-navigation
+sudo apt-get install ros-noetic-navigation
 ```
 * xterm package:
 ```
-$ sudo apt-get install xterm
+sudo apt-get install xterm
 ```
 
 Furthermore, is necessary to clone the following GitHub repositories into the src directory of your ROS workspace:
 ```
-$ git clone https://github.com/CarmineD8/slam_gmapping.git
+git clone https://github.com/CarmineD8/slam_gmapping.git
 ```
 remember to switch on the branch `noetic` using: `git checkout noetic`, and
 ```
-$ git clone https://github.com/thomascampagnolo97/final_assignment.git
+git clone https://github.com/thomascampagnolo97/final_assignment.git
 ```
 
 After you have cloned this packages, you need to build your workspace with `catkin_make` and update it with `rospack profile` (remember to go to the root directory of the workspace before running the commands).
@@ -49,15 +49,15 @@ chmod +x <name_file_python.py>
 Now you can run the simulation, using the following commands in three separate terminals.
 * Run the robotic simulation on Gazebo and Rviz:
 ```
-$ roslaunch final_assignment simulation_gmapping.launch
+roslaunch final_assignment simulation_gmapping.launch
 ```
 * Launch the move_base for the path planning in space:
 ```
-$ roslaunch final_assignment move_base.launch
+roslaunch final_assignment move_base.launch
 ```
 * Run the user interface node, giving the possibility to the user to choose the robot driving mode:
 ```
-$ roslaunch final_assignment launcher.launch
+roslaunch final_assignment launcher.launch
 ```
 The simulation in the Gazebo and Rviz environment looks like this:
 ![gazebo_sim](readme_images/gazebo_sim.jpeg)
