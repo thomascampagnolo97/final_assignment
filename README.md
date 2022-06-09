@@ -42,9 +42,9 @@ After you have cloned this packages, you need to build your workspace with `catk
 
 ## Running
 
-When you have download and build the workspace, make sure that all the `.py ` files in the scripts folder are executables, otherwise you can make it with: 
+When you have download and build the workspace, make sure that all the `.py ` files of this package in the scripts folder are executables, otherwise you can make it with: 
 ```
-chmod +x <name_file_python.py>
+chmod +x <name_script.py>
 ```
 Now you can run the simulation, using the following commands in three separate terminals.
 * Run the robotic simulation on Gazebo and Rviz:
