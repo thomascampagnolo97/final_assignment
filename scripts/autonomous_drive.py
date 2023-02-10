@@ -24,7 +24,7 @@ import actionlib
 from move_base_msgs.msg import *
 from actionlib_msgs.msg import *
 
-max_time = rospy.Duration(30) # maximum duration to reach the set goal
+max_time = rospy.Duration(150) # maximum duration to reach the set goal
 """
 Maximum duration to reach the set goal
 """
@@ -69,6 +69,7 @@ def menage_auto_drive(request):
     # Execution time to prevent the robot from continuing to move 
     # without reaching the terget
     timeout = client.wait_for_result(max_time)
+    
     if not timeout:
         # the target is not reached
         print(f"{bcolors.FAIL}\nThe target can't be reached!{bcolors.ENDC}")

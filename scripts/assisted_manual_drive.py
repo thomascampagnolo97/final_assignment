@@ -52,7 +52,9 @@ def assisted_driving(data):
     global section, vel_msg
 
     # Initialize publisher
-    pub_vel = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+    pub_vel = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+
+    
 
     # section the ranges array in 5 parts and store the minimum value (distance) for each of them  
     section = {
@@ -62,6 +64,8 @@ def assisted_driving(data):
         'fleft':  min(data.ranges[432:575]),
         'left':   min(data.ranges[576:719]),
     }
+
+    flag_control = rospy.get_param("/collision_avoidance")
 
     # states to avoid dangerous situations with obstacles
     # Ostacle on the right of the robot
@@ -127,7 +131,7 @@ def assisted_manual_drive():
     #initialize the node
     rospy.init_node('inputKey_node')
     # Initialize subscribers
-    sub_user_vel = rospy.Subscriber('/collision_cmd_vel', Twist, callBack_remap) # subscriber to topic collision_cmd_vel 
+    sub_user_vel = rospy.Subscriber('/remap_cmd_vel', Twist, callBack_remap) # subscriber to topic collision_cmd_vel 
     sub_laser = rospy.Subscriber('/scan', LaserScan, assisted_driving) # subscriber to topic scan
 
     rospy.spin()
