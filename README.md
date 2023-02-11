@@ -45,15 +45,11 @@ When you have download and build the workspace, make sure that all the `.py ` fi
 ```
 chmod +x <name_file_python.py>
 ```
-Now you can run the simulation, using the following commands in three separate terminals.
+Now you can run the simulation, using the following commands in two separate terminals.
 
 * Run the robotic simulation on Gazebo and Rviz:
 ```
-roslaunch final_assignment simulation_gmapping.launch
-```
-* Launch the move_base for the path planning in space:
-```
-roslaunch final_assignment move_base.launch
+roslaunch final_assignment simulation.launch
 ```
 * Run the rt2_assignment launch file:
 ```
