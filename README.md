@@ -59,7 +59,7 @@ roslaunch final_assignment move_base.launch
 ```
 roslaunch final_assignment rt2_assignment.launch
 ```
-Once the three commands have been launched in the terminals you can run the notebook [GUI notebook](https://thomascampagnolo97.github.io/final_assignment/jupyter_notebook/UI_controller_data_visualizer.ipynb)
+Once the three commands have been launched in the terminals you can run the notebook [GUI notebook](https://github.com/thomascampagnolo97/final_assignment/blob/rt2_assignments/jupyter_notebook/UI_controller_data_visualizer.ipynb)
 
 The simulation in the Gazebo and Rviz environment looks like this:
 ![gazebo_sim](readme_images/gazebo_sim.jpeg)
