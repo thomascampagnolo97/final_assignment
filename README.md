@@ -59,69 +59,17 @@ roslaunch final_assignment move_base.launch
 ```
 roslaunch final_assignment rt2_assignment.launch
 ```
-Once the three commands have been launched in the terminals you can run the notebook [GUI notebook](https://github.com/thomascampagnolo97/final_assignment/blob/rt2_assignments/jupyter_notebook/UI_controller_data_visualizer.ipynb)
+Once the three commands have been launched in the terminals you can run the notebook [GUI notebook](https://github.com/thomascampagnolo97/final_assignment/blob/rt2_assignments/jupyter_notebook/UI_controller_data_visualizer.ipynb).
+
+More details are written in the jupyter notebook.
 
 The simulation in the Gazebo and Rviz environment looks like this:
 ![gazebo_sim](readme_images/gazebo_sim.jpeg)
 ![rviz_sim](readme_images/rviz_sim.jpeg)
 
 
-## Structure Description
-
-The objective is to allowing the user to choose between the driving modality specified in the introduction of the project such that the robot go around the environment.
-In addition, the user interface allows to reset the position of the robot to the initial state or to exit the program by closing all active nodes.
-
-The pseudocode of the `user_interface_controller.py` code that allows to manage each user's choice is the following:
-```
-while userInterface node is running
-while rospy not on shutdown
- print interface
- get user input
- 
- if user input is 1:
- autonomous_drive()
-
- elif user input is 2:
- manual_drive()
-
- elif user input is 9:
- reset_world()
-
- elif user input is 0:
- rospy is shutdown
-
- else:
- user input not valid
-```
-![ui](readme_images/ui_sim.jpeg)
-
-### Autonomous Drive
-
-This function allow the robot to move autonomously to reach the desired target. The user must enter the `x` and `y `coordinates, the `autonomousDrive` node checks if the set goal is reached by calling the `GoalCoordinates` service and sends the coordinates to the `menage_auto_drive(request)` function in `autonomous_drive.py`, which allows to manage the autonomous mode by setting the target and waiting for the result within a set maximum time. Using the `move_base` package action, given a goal in the world, the robot will then attempt to reach it.
-
-The structure of the software in this modality is the following:
-![flow_auto_drive](readme_images/flow_auto_drive.jpeg)
-
-
-### Manual Drive
-
-This function manage the manual driving experience: by calling the `manual_driving` service, the user can choose the type of experience. Selecting mode 1 in `manual_drive.py` will start the full manual mode without assistance through the use of the keyboard; if the user selects mode 2, `manual_drive.py` will use a manual driving experience with assistance to avoid collisions with obstacles.
-
-Depending on the chosen mode (1 or 2), the `menage_manual_drive(request)` function will execute the appropriate launch file:
-* `request.manual_driving_mode == 1` :  the `full_manual_drive.launch` is launched, going to execute the `teleop_twist_keyboard` interface in the new xterm terminal;
-
-* `request.manual_driving_mode == 2` :  the `assisted_manual_drive.launch` is launched, calling the `teleop_twist_keyboard` interface in the new xterm terminal and the obstacle avoidance; remapping the topic `/cmd_vel` to `/collision_cmd_vel` to allow the driving assistance.
-
-The structure of the software in the full manual modality is the following:
-![flow_full_man_drive](readme_images/flow_full_man_drive.jpeg)
-
-The structure of the software in the assisted manual modality is the following:
-![flow_assisted_man_drive](readme_images/flow_assisted_man_drive.jpeg)
-
-
 ## Possible improvements
 
 Some of the possible improvements can be: 
-* the implementation of a dedicated graphic interface for the management of driving modes;
 * give the user the possibility to cancel the target goal while the robot is moving;
 * make the robot move in the environment at the first start in order to save the complete map so as to know in advance if the goal coordinates are reachable or not.
