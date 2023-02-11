@@ -12,59 +12,55 @@ The aim of the project is to develop an architecture to control the robot in the
 
 The project is developed in ROS and Python.
 
-Furthermore, for the first assignment of the Research Track 2 course, the project was integrated with:
+Furthermore, for the first assignment of the **Research Track 2 course**, the project was integrated with:
 *  Sphinx documentation of the entire project, visible at the following link [Assignment 3 Documentation](https://thomascampagnolo97.github.io/final_assignment/)
 *  Jupyter notebook to interact with the simulation, in particular:
-    * Switch between the different modalities, and manage them ??????
-    * Plot the robot position, the laser scanner data and reached / not-reached targets ??????
+    * Switch between the different modalities, and manage them;
+    * Plot the robot position (x- y- coordinates), the laser scanner data and the goal reached/unreached.
 
 ## Installing and clone
 
 The simulator requires the version of [ROS Noetic](http://wiki.ros.org/noetic/Installation) and the following packages if they are not already installed:
 
-* teleop twist keyboard package:
-```
-$ sudo apt-get install ros-noetic-teleop-twist-keyboard
-```
 * ros navigation stack:
 ```
-$ sudo apt-get install ros-noetic-navigation
-```
-* xterm package:
-```
-$ sudo apt-get install xterm
+sudo apt-get install ros-noetic-navigation
 ```
 
 Furthermore, is necessary to clone the following GitHub repositories into the src directory of your ROS workspace:
 ```
-$ git clone https://github.com/CarmineD8/slam_gmapping.git
+git clone https://github.com/CarmineD8/slam_gmapping.git
 ```
 remember to switch on the branch `noetic` using: `git checkout noetic`, and
 ```
-$ git clone https://github.com/thomascampagnolo97/final_assignment.git
+git clone https://github.com/thomascampagnolo97/final_assignment.git
 ```
+remember to switch on the branch `rt2_assignments` using: `git checkout rt2_assignments`.
 
 After you have cloned this packages, you need to build your workspace with `catkin_make` and update it with `rospack profile` (remember to go to the root directory of the workspace before running the commands).
 
-## Running
+## How to run
 
 When you have download and build the workspace, make sure that all the `.py ` files in the scripts folder are executables, otherwise you can make it with: 
 ```
 chmod +x <name_file_python.py>
 ```
 Now you can run the simulation, using the following commands in three separate terminals.
+
 * Run the robotic simulation on Gazebo and Rviz:
 ```
-$ roslaunch final_assignment simulation_gmapping.launch
+roslaunch final_assignment simulation_gmapping.launch
 ```
 * Launch the move_base for the path planning in space:
 ```
-$ roslaunch final_assignment move_base.launch
+roslaunch final_assignment move_base.launch
 ```
-* Run the user interface node, giving the possibility to the user to choose the robot driving mode:
+* Run the rt2_assignment launch file:
 ```
-$ roslaunch final_assignment launcher.launch
+roslaunch final_assignment rt2_assignment.launch
 ```
+Once the three commands have been launched in the terminals you can run the notebook [GUI notebook](https://thomascampagnolo97.github.io/final_assignment/jupyter_notebook/UI_controller_data_visualizer.ipynb)
+
 The simulation in the Gazebo and Rviz environment looks like this:
 ![gazebo_sim](readme_images/gazebo_sim.jpeg)
 ![rviz_sim](readme_images/rviz_sim.jpeg)
