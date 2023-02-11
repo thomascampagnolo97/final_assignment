@@ -3,10 +3,9 @@
 <launch>
     
     <param name="collision_avoidance" value="false" />
-    
+  
     <!-- Run the nodes -->
     <node name= "autonomousDrive" pkg= "final_assignment" type= "autonomous_drive.py"  output="screen" />
-    
     <node name= "assistedManualDrive" pkg= "final_assignment" type= "assisted_manual_drive.py"  output="screen" />
    
 </launch>
