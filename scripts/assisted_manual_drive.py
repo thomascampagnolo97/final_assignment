@@ -52,7 +52,7 @@ def assisted_driving(data):
     global section, vel_msg
 
     # Initialize publisher
-    pub_vel = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+    pub_vel = rospy.Publisher('remap_cmd_vel', Twist, queue_size=10)
 
     
 
