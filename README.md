@@ -1,6 +1,6 @@
 # Assignment 3: ROS Mobile Robots Simulator
 
-Developer: Thomas Campagnolo (5343274)
+Developer: Thomas Campagnolo (S5343274)
 
 MSc Robotics Engineering, University of Genova.
 
