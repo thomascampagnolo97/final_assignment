@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 import rospy
 from final_assignment.srv import GoalCoordinates    # service for autonomous driving
