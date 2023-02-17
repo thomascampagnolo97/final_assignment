@@ -4,19 +4,21 @@ Developer: Thomas Campagnolo (S5343274)
 
 MSc Robotics Engineering, University of Genova.
 
-This is the third and final assignment of the Research Track I course. The simulation involves a mobile robot positioned inside an environment, and it's equipped with a laser scanner in order to detect the presence of obstacles, such as the walls of the environment. 
+For the first assignment of the **Research Track 2 course**, the project of the third and final assignment of the Research Track I course is integrated with:
+*  Sphinx documentation of the entire project, visible at the following link [Assignment 3 Documentation](https://thomascampagnolo97.github.io/final_assignment/)
+*  Jupyter notebook to interact with the simulation, in particular:
+    * Switch between the different modalities, and manage them;
+    * Plot the robot position (x- y- coordinates), the laser scanner data and the goal reached/unreached.
+    
+More details are written in the [jupyter notebook](https://github.com/thomascampagnolo97/final_assignment/blob/rt2_assignments/jupyter_notebook/UI_controller_data_visualizer.ipynb).
+
+The simulation involves a mobile robot positioned inside an environment, and it's equipped with a laser scanner in order to detect the presence of obstacles, such as the walls of the environment. 
 The aim of the project is to develop an architecture to control the robot in the environment. The software will rely on the `move_base` and `gmapping` packages for localizing the robot and plan the motion. The implemented architecture allows the user to perform three different robot behavior modes, in particular:
 * Reach autonomously the coordinate (x, y) entered by the user, thus obtaining an autonomous guide of the robot; 
 * Let the user to drive the robot with the keyboard, thus having the opportunity to try a manual robot driving experience; 
 * Let the user to guide the robot with the keyboard with assistance to avoid collisions with obstacles.
 
 The project is developed in ROS and Python.
-
-Furthermore, for the first assignment of the **Research Track 2 course**, the project was integrated with:
-*  Sphinx documentation of the entire project, visible at the following link [Assignment 3 Documentation](https://thomascampagnolo97.github.io/final_assignment/)
-*  Jupyter notebook to interact with the simulation, in particular:
-    * Switch between the different modalities, and manage them;
-    * Plot the robot position (x- y- coordinates), the laser scanner data and the goal reached/unreached.
 
 ## Installing and clone
 
@@ -56,8 +58,6 @@ roslaunch final_assignment simulation.launch
 roslaunch final_assignment rt2_assignment.launch
 ```
 Once the three commands have been launched in the terminals you can run the notebook [GUI notebook](https://github.com/thomascampagnolo97/final_assignment/blob/rt2_assignments/jupyter_notebook/UI_controller_data_visualizer.ipynb).
-
-More details are written in the jupyter notebook.
 
 The simulation in the Gazebo and Rviz environment looks like this:
 ![gazebo_sim](readme_images/gazebo_sim.jpeg)
